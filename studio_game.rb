@@ -1,5 +1,5 @@
 class Player
-  def initialize(name, health)
+  def initialize(name, health=100)
     @name = name.capitalize
     @health = health
   end  
@@ -9,6 +9,6 @@ class Player
   end
 end
 
-player1 = Player.new("moe", 100)
+player1 = Player.new("moe")
 puts player1.inspect
 puts player1
