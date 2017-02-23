@@ -4,6 +4,7 @@ class Player
     @health = health
   end  
 
+  attr_reader :name
   attr_reader :health
 
   def to_s
