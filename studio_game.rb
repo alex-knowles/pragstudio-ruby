@@ -50,7 +50,3 @@ players.each do |player|
   player.blam
   puts player
 end
-
-player2.name = "Lawrence"
-puts player2
-
