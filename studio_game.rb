@@ -1,8 +1,8 @@
 def say_hello(name)
-  puts "I'm #{name.capitalize}!"
+  "I'm #{name.capitalize}!"
 end
 
-say_hello("larry")
-say_hello("curly")
-say_hello("moe")
-say_hello("shemp")
+puts say_hello("larry")
+puts say_hello("curly")
+puts say_hello("moe")
+puts say_hello("shemp")
