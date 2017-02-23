@@ -22,10 +22,3 @@ t = Time.now
 date_str = t.strftime("%A %m/%d/%Y")
 time_str = t.strftime("%I:%M%p")
 puts "The game started on #{date_str} at #{time_str}"
-
-puts ""
-puts "Players:"
-puts "\t#{player_name1}"
-puts "\t#{player_name2}"
-puts "\t#{player_name3}"
-
