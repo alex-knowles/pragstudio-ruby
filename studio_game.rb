@@ -33,6 +33,10 @@ class Game
     @title = title
     @players = []
   end
+
+  def add_player(player)
+    @players << player
+  end
 end
 
 player1 = Player.new("moe")
@@ -42,6 +46,10 @@ player4 = Player.new("shemp", 90)
 
 knuckleheads = Game.new("Knuckleheads")
 puts "The game is called #{knuckleheads.title}."
+
+knuckleheads.add_player(player1)
+knuckleheads.add_player(player2)
+knuckleheads.add_player(player3)
 
 players = [player1, player2, player3]
 players.pop
