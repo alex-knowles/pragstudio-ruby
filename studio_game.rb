@@ -58,8 +58,19 @@ player2 = Player.new("larry", 60)
 player3 = Player.new("curly", 125)
 player4 = Player.new("shemp", 90)
 
+player5 = Player.new("alvin")
+player6 = Player.new("simon")
+player7 = Player.new("theodore")
+
 knuckleheads = Game.new("Knuckleheads")
 knuckleheads.add_player(player1)
 knuckleheads.add_player(player2)
 knuckleheads.add_player(player3)
 knuckleheads.play
+
+puts
+chipmunks = Game.new("Chipmunks")
+chipmunks.add_player(player5)
+chipmunks.add_player(player6)
+chipmunks.add_player(player7)
+chipmunks.play
