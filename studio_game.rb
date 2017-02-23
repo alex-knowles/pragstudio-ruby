@@ -1,2 +1,2 @@
 puts "Welcome!"
-puts Time.new
+puts Time.now
