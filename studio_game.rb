@@ -9,5 +9,5 @@ class Player
   end
 end
 
-player1 = Player.new("larry", 90)
+player1 = Player.new("moe", 100)
 puts player1
