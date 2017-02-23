@@ -1,24 +1,13 @@
-player_name1 = "larry"
-player_name2 = "curly"
-player_name3 = "moe"
-player_name4 = "shemp"
+def time
+  t = Time.now
+  t.strftime("%H:%M:%S")
+end
 
-player_health1 = 60
-player_health2 = 125
-player_health3 = 100
-player_health4 = 90
+def say_hello(name, health=100)
+  "I'm #{name.capitalize} with a health of #{health} as of #{time}."
+end
 
-puts "#{player_name1.capitalize} has a health of #{player_health1}."
-puts "#{player_name2.upcase} has a health of #{player_health2}."
-
-player_status_msg3 = "#{player_name3.capitalize} has a health of #{player_health3}."
-puts player_status_msg3.center(player_status_msg3.length + 13 * 2, '*')
-
-msg_width4 = player_name4.length + 27
-player_status_msg4 = "#{player_name4.capitalize.ljust(msg_width4, '.')} #{player_health4} health"
-puts player_status_msg4
-
-t = Time.now
-date_str = t.strftime("%A %m/%d/%Y")
-time_str = t.strftime("%I:%M%p")
-puts "The game started on #{date_str} at #{time_str}"
+puts say_hello("larry", 60)
+puts say_hello("curly", 125)
+puts say_hello("moe")
+puts say_hello("shemp", 90)
