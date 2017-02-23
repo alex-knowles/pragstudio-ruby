@@ -10,4 +10,5 @@ class Player
 end
 
 player1 = Player.new("moe", 100)
+puts player1.inspect
 puts player1
