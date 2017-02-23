@@ -4,7 +4,8 @@ class Player
     @health = health
   end  
 
-  attr_reader :name, :health
+  attr_accessor :name
+  attr_reader :health
 
   def to_s
     "I'm #{@name} with a health of #{@health}."
@@ -28,3 +29,6 @@ player3 = Player.new("curly", 125)
 puts player1.health
 puts player2.health
 puts player3.health
+
+player2.name = "Lawrence"
+puts player2
