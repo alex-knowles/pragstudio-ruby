@@ -4,8 +4,7 @@ player_name3 = "moe"
 
 player_health1 = 60
 
-player_status_msg = "#{player_name1}'s health is #{player_health1}"
-puts player_status_msg
+puts "#{player_name1}'s health is #{player_health1}"
 
 puts ""
 puts "Players:"
