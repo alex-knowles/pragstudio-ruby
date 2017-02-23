@@ -11,6 +11,10 @@ class Player
     "I'm #{@name} with a health of #{@health}."
   end
 
+  def score
+    @health + @name.length
+  end
+
   def blam
     @health -= 10
     puts "#{@name} got blammed!"
