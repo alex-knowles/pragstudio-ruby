@@ -37,6 +37,20 @@ class Game
   def add_player(player)
     @players << player
   end
+
+  def play
+    puts "There are #{@players.size} players in #{@title}:"
+      @players.each do |player|
+      puts player
+    end
+    @players.each do |player|
+      player.blam
+      player.w00t
+      player.blam
+      puts player
+    end
+  end
+
 end
 
 player1 = Player.new("moe")
@@ -45,28 +59,7 @@ player3 = Player.new("curly", 125)
 player4 = Player.new("shemp", 90)
 
 knuckleheads = Game.new("Knuckleheads")
-puts "The game is called #{knuckleheads.title}."
-
 knuckleheads.add_player(player1)
 knuckleheads.add_player(player2)
 knuckleheads.add_player(player3)
-
-players = [player1, player2, player3]
-players.pop
-players << player4
-
-puts "There are #{players.size} players in the game:"
-players.each do |player|
-  puts player
-end
-
-players.each do |player|
-  puts player.health
-end
-
-players.each do |player|
-  player.blam
-  player.w00t
-  player.blam
-  puts player
-end
+knuckleheads.play
