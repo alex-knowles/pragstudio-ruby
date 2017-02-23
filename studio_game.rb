@@ -40,6 +40,13 @@ players.each do |player|
   puts player.health
 end
 
+players.each do |player|
+  player.blam
+  player.w00t
+  player.blam
+  puts player
+end
+
 player2.name = "Lawrence"
 puts player2
 
