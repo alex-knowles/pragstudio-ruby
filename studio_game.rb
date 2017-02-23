@@ -4,7 +4,7 @@ player_name3 = "moe"
 
 player_health1 = 60
 
-puts "#{player_name1}'s health is #{player_health1}"
+puts "#{player_name1.capitalize}'s health is #{player_health1}"
 
 puts ""
 puts "Players:"
