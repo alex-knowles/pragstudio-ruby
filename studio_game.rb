@@ -29,8 +29,12 @@ end
 player1 = Player.new("moe")
 player2 = Player.new("larry", 60)
 player3 = Player.new("curly", 125)
+player4 = Player.new("shemp", 90)
 
 players = [player1, player2, player3]
+players.pop
+players << player4
+
 puts "There are #{players.size} players in the game:"
 players.each do |player|
   puts player
