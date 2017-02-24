@@ -19,7 +19,10 @@ class Game
       puts player
     end
     @players.each do |player|
-      player.w00t
+      die = Die.new
+      if die.roll >= 5
+        player.w00t
+      end
       puts player
     end
   end

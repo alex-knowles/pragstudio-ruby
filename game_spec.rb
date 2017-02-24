@@ -19,4 +19,10 @@ describe Game do
     expect(@player.health).to eq(@initial_health + 15)
   end
 
+  it "skips a player when they roll a medium number" do
+    allow_any_instance_of(Die).to receive(:roll).and_return(3)
+    @game.play
+    expect(@player.health).to eq(@initial_health)
+  end
+
 end
