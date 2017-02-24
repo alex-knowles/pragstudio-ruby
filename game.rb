@@ -36,6 +36,13 @@ class Game
 
     puts "#{weak.length} n00bs:"
     weak.each { |p| print_player_stats(p) }
+    puts ""
+
+    puts "#{@title} High Scores:"
+    sorted_players = @players.sort { |a, b| b.score <=> a.score}
+    sorted_players.each do |player|
+      puts "#{player.name.ljust(20, '.')} #{player.score}"
+    end
   end
 
   def print_player_stats(player)
