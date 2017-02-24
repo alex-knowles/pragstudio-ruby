@@ -11,6 +11,10 @@ class Player
     "I'm #{@name} with a health of #{@health} and a score of #{score}."
   end
 
+  def <=>(player)
+    player.score <=> score
+  end
+
   def strong?
     @health > 100
   end
