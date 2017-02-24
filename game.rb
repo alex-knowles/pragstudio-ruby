@@ -23,9 +23,10 @@ class Game
       number_rolled = die.roll
       if number_rolled >= 5
         player.w00t
-      end
-      if number_rolled <= 2
+      elsif number_rolled <= 2
         player.blam
+      else
+        #skip player
       end
       puts player
     end
