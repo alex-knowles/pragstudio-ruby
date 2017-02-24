@@ -7,7 +7,10 @@ describe Player do
     expect(player.name).to eq("Larry")
   end
 
-  it "has an initial health"
+  it "has an initial health" do
+    player = Player.new("larry", 150)
+    expect(player.health).to eq(150)
+  end
 
   it "has a string representation"
 
