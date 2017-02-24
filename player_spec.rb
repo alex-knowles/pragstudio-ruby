@@ -18,7 +18,9 @@ describe Player do
     expect(@player.to_s).to eq("I'm Larry with a health of 150 and a score of 155.")
   end
 
-  it "computes a score as the sum of its health and length of name"
+  it "computes a score as the sum of its health and length of name" do
+    expect(@player.score).to eq(150 + 5)
+  end
 
   it "increases health by 15 when w00ted"
 
