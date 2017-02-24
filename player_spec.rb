@@ -43,7 +43,7 @@ describe Player do
     end
 
     it "is strong" do
-      expect(@player.strong?).to be_truthy
+      expect(@player).to be_strong
     end
   end
 
