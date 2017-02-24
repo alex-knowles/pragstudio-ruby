@@ -8,27 +8,27 @@ describe Game do
 
   before do
     @game = Game.new("Knuckleheads")
-    @initial_health = 100
-    @player = Player.new("moe", @initial_health)
+    @player = spy("Some player")
     @game.add_player(@player)
   end
 
   it "w00ts a player when they roll a high number" do
     allow_any_instance_of(Die).to receive(:roll).and_return(5)
     @game.play
-    expect(@player.health).to eq(@initial_health + 15)
+    expect(@player).to have_received(:w00t)
   end
 
   it "skips a player when they roll a medium number" do
     allow_any_instance_of(Die).to receive(:roll).and_return(3)
     @game.play
-    expect(@player.health).to eq(@initial_health)
+    expect(@player).not_to have_received(:w00t)
+    expect(@player).not_to have_received(:blam)
   end
 
   it "blams a player when they roll a low number" do
     allow_any_instance_of(Die).to receive(:roll).and_return(2)
     @game.play
-    expect(@player.health).to eq(@initial_health - 10)
+    expect(@player).to have_received(:blam)
   end
 
 end
