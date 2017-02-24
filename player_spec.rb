@@ -7,4 +7,14 @@ describe Player do
     expect(player.name).to eq("Larry")
   end
 
+  it "has an initial health"
+
+  it "has a string representation"
+
+  it "computes a score as the sum of its health and length of name"
+
+  it "increases health by 15 when w00ted"
+
+  it "decreases health by 10 when blammed"
+
 end
