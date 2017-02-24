@@ -2,14 +2,16 @@ require_relative 'player'
 
 describe Player do
 
+  before do
+    @player = Player.new("larry", 150)
+  end
+
   it "has a capitalized name" do
-    player = Player.new("larry", 150)
-    expect(player.name).to eq("Larry")
+    expect(@player.name).to eq("Larry")
   end
 
   it "has an initial health" do
-    player = Player.new("larry", 150)
-    expect(player.health).to eq(150)
+    expect(@player.health).to eq(150)
   end
 
   it "has a string representation"
