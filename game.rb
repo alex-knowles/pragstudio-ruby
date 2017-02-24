@@ -61,6 +61,9 @@ end
 if __FILE__ == $0
   game = Game.new("foo")
   game.add_player(Player.new("player"))
+
   game.play(3)
+
+  puts ""
   game.print_stats
 end
