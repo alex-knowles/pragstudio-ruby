@@ -22,7 +22,10 @@ describe Player do
     expect(@player.score).to eq(150 + 5)
   end
 
-  it "increases health by 15 when w00ted"
+  it "increases health by 15 when w00ted" do
+    @player.w00t
+    expect(@player.health).to eq(150 + 15)
+  end
 
   it "decreases health by 10 when blammed"
 
