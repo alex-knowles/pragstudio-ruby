@@ -25,10 +25,28 @@ class Game
     end
   end
 
+  def print_stats
+    strong, weak = @players.partition { |p| p.strong? }
+    puts "#{@title} Statistics:"
+    puts ""
+
+    puts "#{strong.length} Legends:"
+    strong.each { |p| print_player_stats(p) }
+    puts ""
+
+    puts "#{weak.length} n00bs:"
+    weak.each { |p| print_player_stats(p) }
+  end
+
+  def print_player_stats(player)
+    puts "#{player.name} (#{player.score})"
+  end
+
 end
 
 if __FILE__ == $0
   game = Game.new("foo")
   game.add_player(Player.new("player"))
   game.play(3)
+  game.print_stats
 end
