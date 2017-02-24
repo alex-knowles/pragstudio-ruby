@@ -15,6 +15,10 @@ class Player
     true
   end
 
+  def wimpy?
+   true
+  end
+
   def score
     @health + @name.length
   end

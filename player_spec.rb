@@ -47,4 +47,14 @@ describe Player do
     end
   end
 
+  context "with a health not greater than 100" do
+    before do
+      @player = Player.new("larry", 100)
+    end
+
+    it "is wimpy" do
+      expect(@player).to be_wimpy
+    end
+  end
+
 end
