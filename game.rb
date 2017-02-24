@@ -1,3 +1,4 @@
+require_relative 'die'
 require_relative 'player'
 
 class Game
@@ -18,9 +19,7 @@ class Game
       puts player
     end
     @players.each do |player|
-      player.blam
       player.w00t
-      player.blam
       puts player
     end
   end
