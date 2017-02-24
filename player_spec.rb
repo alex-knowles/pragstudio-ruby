@@ -14,7 +14,9 @@ describe Player do
     expect(@player.health).to eq(150)
   end
 
-  it "has a string representation"
+  it "has a string representation" do
+    expect(@player.to_s).to eq("I'm Larry with a health of 150 and a score of 155.")
+  end
 
   it "computes a score as the sum of its health and length of name"
 
