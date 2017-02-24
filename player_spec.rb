@@ -28,6 +28,9 @@ describe Player do
     expect(@player.health).to eq(@initial_health + 15)
   end
 
-  it "decreases health by 10 when blammed"
+  it "decreases health by 10 when blammed" do
+    @player.blam
+    expect(@player.health).to eq(@initial_health - 10)
+  end
 
 end
