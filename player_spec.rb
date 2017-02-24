@@ -3,7 +3,8 @@ require_relative 'player'
 describe Player do
 
   before do
-    @player = Player.new("larry", 150)
+    @initial_health = 150
+    @player = Player.new("larry", @initial_health)
   end
 
   it "has a capitalized name" do
@@ -11,20 +12,20 @@ describe Player do
   end
 
   it "has an initial health" do
-    expect(@player.health).to eq(150)
+    expect(@player.health).to eq(@initial_health)
   end
 
   it "has a string representation" do
-    expect(@player.to_s).to eq("I'm Larry with a health of 150 and a score of 155.")
+    expect(@player.to_s).to eq("I'm Larry with a health of #{@initial_health} and a score of 155.")
   end
 
   it "computes a score as the sum of its health and length of name" do
-    expect(@player.score).to eq(150 + 5)
+    expect(@player.score).to eq(@initial_health + 5)
   end
 
   it "increases health by 15 when w00ted" do
     @player.w00t
-    expect(@player.health).to eq(150 + 15)
+    expect(@player.health).to eq(@initial_health + 15)
   end
 
   it "decreases health by 10 when blammed"
