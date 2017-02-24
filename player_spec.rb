@@ -3,6 +3,10 @@ require_relative 'player'
 describe Player do
 
   before do
+    $stdout = StringIO.new
+  end
+
+  before do
     @initial_health = 150
     @player = Player.new("larry", @initial_health)
   end
