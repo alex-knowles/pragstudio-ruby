@@ -20,8 +20,12 @@ class Game
     end
     @players.each do |player|
       die = Die.new
-      if die.roll >= 5
+      number_rolled = die.roll
+      if number_rolled >= 5
         player.w00t
+      end
+      if number_rolled <= 2
+        player.blam
       end
       puts player
     end
