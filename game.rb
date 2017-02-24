@@ -15,9 +15,7 @@ class Game
 
   def play
     puts "There are #{@players.size} players in #{@title}:"
-    @players.each do |player|
-      puts player
-    end
+    @players.each { |player| puts player }
     @players.each do |player|
       GameTurn.take_turn(player)
       puts player
