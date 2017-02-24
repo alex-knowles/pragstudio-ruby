@@ -1,3 +1,4 @@
+require_relative 'die'
 require_relative 'player'
 
 class Game
@@ -18,9 +19,15 @@ class Game
       puts player
     end
     @players.each do |player|
-      player.blam
-      player.w00t
-      player.blam
+      die = Die.new
+      case die.roll
+        when 1..2
+	  player.blam
+        when 5..6
+          player.w00t
+       else
+         #skip player
+      end
       puts player
     end
   end
