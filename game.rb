@@ -20,13 +20,13 @@ class Game
     end
     @players.each do |player|
       die = Die.new
-      number_rolled = die.roll
-      if number_rolled >= 5
-        player.w00t
-      elsif number_rolled <= 2
-        player.blam
-      else
-        #skip player
+      case die.roll
+        when 1..2
+	  player.blam
+        when 5..6
+          player.w00t
+       else
+         #skip player
       end
       puts player
     end
