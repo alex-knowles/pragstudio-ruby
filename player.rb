@@ -5,7 +5,7 @@ class Player
   def initialize(name, health=100)
     @name = name.capitalize
     @health = health
-    @found_treasures = {}
+    @found_treasures = Hash.new(0)
   end
 
   def to_s
@@ -39,7 +39,7 @@ class Player
   end
 
   def found_treasure(treasure)
-    @found_treasures[treasure.name] = treasure.points
+    @found_treasures[treasure.name] += treasure.points
   end
 
 end
