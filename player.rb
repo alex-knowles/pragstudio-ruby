@@ -5,6 +5,7 @@ class Player
   def initialize(name, health=100)
     @name = name.capitalize
     @health = health
+    @found_treasures = {}
   end
 
   def to_s
@@ -24,7 +25,7 @@ class Player
   end
 
   def points
-    0
+    @found_treasures.values.reduce(0, :+)
   end
 
   def blam
@@ -36,6 +37,11 @@ class Player
     @health += 15
     puts "#{@name} got w00ted!"
   end
+
+  def found_treasure(treasure)
+    @found_treasures[treasure.name] = treasure.points
+  end
+
 end
 
 if __FILE__ == $0
