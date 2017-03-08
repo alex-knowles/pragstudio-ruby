@@ -1,7 +1,7 @@
 require_relative 'game'
 
 knuckleheads = Game.new("Knuckleheads")
-knuckleheads.load_players('players.csv')
+knuckleheads.load_players(ARGV.shift || "players.csv")
 
 loop do
   puts "How many game rounds? ('quit' to exit)"
