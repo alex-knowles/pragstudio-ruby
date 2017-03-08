@@ -10,7 +10,17 @@ knuckleheads.add_player(player1)
 knuckleheads.add_player(player2)
 knuckleheads.add_player(player3)
 
-knuckleheads.play(3)
-
-puts ""
-knuckleheads.print_stats
+loop do
+  puts "How many game rounds? ('quit' to exit)"
+  answer = gets.chomp.downcase
+  case answer
+  when /^\d+$/
+    knuckleheads.play(3)
+    puts ""
+  when 'quit', 'exit'
+    knuckleheads.print_stats
+    break
+  else
+    puts "Please enter a number or 'quit'"
+  end
+end
