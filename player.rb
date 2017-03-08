@@ -1,3 +1,5 @@
+require_relative 'treasure_trove'
+
 class Player
   attr_accessor :name
   attr_reader :health
@@ -45,6 +47,10 @@ class Player
   end
 
   def each_found_treasure
+    @found_treasures.each do |k, v|
+      treasure = Treasure.new(k, v)
+      yield treasure
+    end
   end
 
 end
