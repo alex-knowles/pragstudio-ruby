@@ -44,6 +44,9 @@ class Player
     puts "#{@name}'s treasures: #{@found_treasures}"
   end
 
+  def each_found_treasure
+  end
+
 end
 
 if __FILE__ == $0
