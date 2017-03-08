@@ -32,6 +32,11 @@ describe Game do
     expect(@player).to have_received(:blam)
   end
 
+  it "assigns a treasure for points during a player's turn" do
+    @game.play(@rounds)
+    expect(@player).to have_received(:found_treasure)
+  end
+
   context "with a die that always rolls a 6" do
 
     before do
