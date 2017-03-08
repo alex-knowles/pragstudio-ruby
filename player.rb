@@ -1,3 +1,5 @@
+require_relative 'treasure_trove'
+
 class Player
   attr_accessor :name
   attr_reader :health
@@ -42,6 +44,13 @@ class Player
     @found_treasures[treasure.name] += treasure.points
     puts "#{@name} found a #{treasure.name} worth #{treasure.points} points."
     puts "#{@name}'s treasures: #{@found_treasures}"
+  end
+
+  def each_found_treasure
+    @found_treasures.each do |k, v|
+      treasure = Treasure.new(k, v)
+      yield treasure
+    end
   end
 
 end
