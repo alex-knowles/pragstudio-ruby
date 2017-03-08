@@ -64,11 +64,11 @@ describe Player do
       yielded << treasure
     end
 
-    yielded.should  == [
+    expect(yielded).to contain_exactly(
       Treasure.new(:skillet, 200),
       Treasure.new(:hammer, 50),
       Treasure.new(:bottle, 25)
-    ]
+    )
   end
 
   context "with a health greater than 100" do
