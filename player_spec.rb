@@ -1,4 +1,5 @@
 require_relative 'player'
+require 'csv'
 
 describe Player do
 
@@ -25,7 +26,8 @@ describe Player do
 
   it "can be deserialized from CSV" do
     csv = "Larry, 150"
-    player = Player.from_csv(csv)
+    parsed_csv = CSV.parse(csv)
+    player = Player.from_csv(parsed_csv[0])
     expect(player.name).to eq("Larry")
     expect(player.health).to eq(150)
   end
