@@ -12,6 +12,11 @@ describe BerserkPlayer do
     expect(@player.berserk?).to be_falsey
   end
 
+  it "goes berserk when w00ted more than 5 times" do
+    6.times { @player.w00t }
+    expect(@player.berserk?).to be_truthy
+  end
+
   it "gets health increases from blams after 6 w00ts" do
     expect(@player.health).to eq(@initial_health)
 
