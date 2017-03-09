@@ -14,6 +14,10 @@ class Player
     "I'm #{@name} with health = #{@health}, points = #{points}, and score = #{score}."
   end
 
+  def self.from_csv(csv)
+    Player.new(csv[0], csv[1].to_i)
+  end
+
   def <=>(player)
     player.score <=> score
   end

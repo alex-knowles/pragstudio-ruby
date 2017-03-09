@@ -1,4 +1,5 @@
 require_relative 'player'
+require 'csv'
 
 describe Player do
 
@@ -21,6 +22,14 @@ describe Player do
 
   it "has a string representation" do
     expect(@player.to_s).to eq("I'm Larry with health = #{@initial_health}, points = 0, and score = #{@initial_health}.")
+  end
+
+  it "can be deserialized from CSV" do
+    csv = "Larry, 150"
+    parsed_csv = CSV.parse(csv)
+    player = Player.from_csv(parsed_csv[0])
+    expect(player.name).to eq("Larry")
+    expect(player.health).to eq(150)
   end
 
   it "computes a score as the sum of its health and points" do
