@@ -19,10 +19,7 @@ describe ClumsyPlayer do
     @player.found_treasure(crowbar)
     expect(@player.points).to eq(275)
 
-    yielded = []
-    @player.each_found_treasure do |treasure|
-      yielded << treasure
-    end
+    yielded = @player.each_found_treasure.reduce([], :<<)
     expect(yielded).to contain_exactly(
       Treasure.new(:hammer, 75),
       Treasure.new(:crowbar, 200)
