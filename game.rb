@@ -54,10 +54,7 @@ class Game
     weak.each { |p| print_player_stats(p) }
     puts ""
 
-    puts "#{@title} High Scores:"
-    @players.sort.each do |player|
-      puts "#{player.name.ljust(20, '.')} #{player.score}"
-    end
+    format_high_scores { |line| puts line }
 
     @players.each do |player|
       puts "\n#{player.name}'s point totals:"
@@ -74,12 +71,16 @@ class Game
     puts "#{player.name} (#{player.score})"
   end
 
+  def format_high_scores
+    yield "#{@title} High Scores:"
+    @players.sort.each do |player|
+      yield "#{player.name.ljust(20, '.')} #{player.score}"
+    end
+  end
+
   def save_high_scores(filename="high_scores.txt")
     File.open(filename, 'w') do |file|
-      file.puts "#{@title} High Scores:"
-      @players.sort.each do |player|
-        file.puts "#{player.name.ljust(20, '.')} #{player.score}"
-      end
+      format_high_scores { |line| file.puts line }
     end
   end
 
