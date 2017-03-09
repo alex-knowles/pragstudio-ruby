@@ -16,9 +16,7 @@ class Game
 
   def load_players(filename)
     File.readlines(filename).each do |line|
-      name, health = line.split(',')
-      player = Player.new(name, health.to_i)
-      add_player(player)
+      add_player(Player.from_csv(line))
     end
   end
 

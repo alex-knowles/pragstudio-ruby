@@ -23,6 +23,13 @@ describe Player do
     expect(@player.to_s).to eq("I'm Larry with health = #{@initial_health}, points = 0, and score = #{@initial_health}.")
   end
 
+  it "can be deserialized from CSV" do
+    csv = "Larry, 150"
+    player = Player.from_csv(csv)
+    expect(player.name).to eq("Larry")
+    expect(player.health).to eq(150)
+  end
+
   it "computes a score as the sum of its health and points" do
     @player.found_treasure(Treasure.new(:hammer, 50))
     @player.found_treasure(Treasure.new(:hammer, 50))
