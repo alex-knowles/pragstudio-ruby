@@ -74,6 +74,15 @@ class Game
     puts "#{player.name} (#{player.score})"
   end
 
+  def save_high_scores(filename="high_scores.txt")
+    File.open(filename, 'w') do |file|
+      file.puts "#{@title} High Scores:"
+      @players.sort.each do |player|
+        file.puts "#{player.name.ljust(20, '.')} #{player.score}"
+      end
+    end
+  end
+
 end
 
 if __FILE__ == $0
@@ -84,4 +93,5 @@ if __FILE__ == $0
 
   puts ""
   game.print_stats
+  game.save_high_scores
 end
