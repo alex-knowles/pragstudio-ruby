@@ -7,6 +7,11 @@ describe BerserkPlayer do
     @player = BerserkPlayer.new("berserker", @initial_health)
   end
 
+  it "does not go berserk when w00ted up to 5 times" do
+    5.times { @player.w00t }
+    expect(@player.berserk?).to be_falsey
+  end
+
   it "gets health increases from blams after 6 w00ts" do
     expect(@player.health).to eq(@initial_health)
 

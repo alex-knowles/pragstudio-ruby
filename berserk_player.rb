@@ -7,6 +7,10 @@ class BerserkPlayer < Player
     @w00t_count = 0
   end
 
+  def berserk?
+    @w00t_count > 5
+  end
+
   def w00t
     @w00t_count += 1
     super
@@ -18,12 +22,6 @@ class BerserkPlayer < Player
     else
       super
     end
-  end
-
-private
-
-  def berserk?
-    @w00t_count >= 5
   end
 
 end
