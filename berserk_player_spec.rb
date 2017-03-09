@@ -17,6 +17,16 @@ describe BerserkPlayer do
     expect(@player.berserk?).to be_truthy
   end
 
+  it "gets w00ted instead of blammed once it's gone berserk" do
+    6.times { @player.w00t }
+    expected_health = @initial_health + 6 * 15
+    expect(@player.health).to eq(expected_health)
+
+    @player.blam
+    expected_health += 15
+    expect(@player.health).to eq(expected_health)
+  end
+
   it "gets health increases from blams after 6 w00ts" do
     expect(@player.health).to eq(@initial_health)
 
