@@ -5,6 +5,10 @@ module StudioGame
   describe BerserkPlayer do
 
     before do
+      $stdout = StringIO.new
+    end
+
+    before do
       @initial_health = 50
       @player = BerserkPlayer.new("berserker", @initial_health)
     end

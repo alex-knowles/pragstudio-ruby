@@ -4,6 +4,10 @@ module StudioGame
   describe ClumsyPlayer do
 
     before do
+      $stdout = StringIO.new
+    end
+
+    before do
       @player = ClumsyPlayer.new("klutz")
     end
 
